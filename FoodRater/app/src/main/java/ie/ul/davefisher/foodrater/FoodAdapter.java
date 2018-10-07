@@ -14,12 +14,14 @@ import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
+
   @NonNull
   @Override
   public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View itemView = LayoutInflater.from(parent.getContext())
         .inflate(R.layout.food_item_view, parent, false);
     return new FoodViewHolder(itemView);
+
   }
 
   private List<Food> mFoods = new ArrayList<>();
@@ -66,7 +68,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
       mImageView = itemView.findViewById(R.id.food_pic);
       mName = itemView.findViewById(R.id.name);
       mRatingBar = itemView.findViewById(R.id.rating_bar);
-
       itemView.setOnLongClickListener(new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
@@ -74,7 +75,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
           return true;
         }
       });
-
       mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
         @Override
         public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
